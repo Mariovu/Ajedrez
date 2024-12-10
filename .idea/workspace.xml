@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fbed7afd-11c9-4742-a2c9-227f2677de5b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ajedrez.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/B-A.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/B-C.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/B-P.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/B-Q.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/B-R.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/B-T.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/N-A.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/N-C.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/N-P.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/N-Q.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/N-R.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/N-T.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exceptions/MovimientoInvalidoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Vistas/AjedrezGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelos/Alfil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelos/Caballo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelos/ColorPieza.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelos/Peon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelos/Pieza.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelos/Posicion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelos/Queen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelos/Rey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelos/Tablero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelos/Torre.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2pcrJzpdIQMrgOCe5NtnUDD0ROr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "E:/Program Files/Seguro/JavaProyectos/Ajedrez/Images"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Program Files\Seguro\JavaProyectos\Ajedrez\Images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Program Files\Seguro\JavaProyectos\Ajedrez\src\Vistas" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fbed7afd-11c9-4742-a2c9-227f2677de5b" name="Changes" comment="" />
+      <created>1733076151843</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733076151843</updated>
+    </task>
+    <servers />
+  </component>
+</project>

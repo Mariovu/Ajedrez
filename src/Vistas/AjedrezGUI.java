@@ -11,6 +11,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 public class AjedrezGUI extends JFrame {
     private Tablero tablero; // Instancia de tu clase Tablero
@@ -20,6 +21,12 @@ public class AjedrezGUI extends JFrame {
     private JPanel panelTablero; // Panel para el tablero
     private final int TAMANO_CASILLA = 120; // Tamaño de cada casilla
     private JPanel panelSeleccionado; // Panel de la pieza seleccionada
+
+    // Paneles para las piezas comidas
+    private JPanel panelPiezasComidasBlancas;
+    private JPanel panelPiezasComidasNegras;
+    private ArrayList<Pieza> piezasComidasBlancas;
+    private ArrayList<Pieza> piezasComidasNegras;
 
     public AjedrezGUI() {
         setTitle("Juego de Ajedrez");
@@ -35,10 +42,36 @@ public class AjedrezGUI extends JFrame {
         tablero = new Tablero(); // Inicializa el tablero
         turnoBlancas = true; // Comienza con el turno de las blancas
 
+        // Inicializar listas para piezas comidas
+        piezasComidasBlancas = new ArrayList<>();
+        piezasComidasNegras = new ArrayList<>();
+
+        inicializarPanelesPiezasComidas();
         inicializarPanelTablero();
         actualizarTablero();
 
         setVisible(true);
+    }
+
+    private void inicializarPanelesPiezasComidas() {
+        // Crear paneles para las piezas comidas
+        panelPiezasComidasBlancas = new JPanel();
+        panelPiezasComidasBlancas.setLayout(new BoxLayout(panelPiezasComidasBlancas, BoxLayout.Y_AXIS));
+        panelPiezasComidasBlancas.setBorder(BorderFactory.createTitledBorder("Piezas Comidas Blancas"));
+        panelPiezasComidasBlancas.setPreferredSize(new Dimension(200, 300)); // Ajusta el tamaño preferido
+
+        panelPiezasComidasNegras = new JPanel();
+        panelPiezasComidasNegras.setLayout(new BoxLayout(panelPiezasComidasNegras, BoxLayout.Y_AXIS));
+        panelPiezasComidasNegras.setBorder(BorderFactory.createTitledBorder("Piezas Comidas Negras"));
+        panelPiezasComidasNegras.setPreferredSize(new Dimension(200, 300)); // Ajusta el tamaño preferido
+
+        // Añadir los paneles al lado derecho del tablero
+        JPanel panelDerecho = new JPanel();
+        panelDerecho.setLayout(new BorderLayout());
+        panelDerecho.add(panelPiezasComidasBlancas, BorderLayout.NORTH);
+        panelDerecho.add(panelPiezasComidasNegras, BorderLayout.SOUTH);
+
+        add(panelDerecho, BorderLayout.EAST); // Añadir el panel derecho al marco
     }
 
     private void inicializarPanelTablero() {
@@ -46,7 +79,7 @@ public class AjedrezGUI extends JFrame {
         panelTablero.setLayout(new GridLayout(8, 8)); // Usar GridLayout para el tablero
 
         for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+            for (int j = 0; j < 8; j++ ) {
                 JPanel casilla = new JPanel();
                 casilla.setPreferredSize(new Dimension(TAMANO_CASILLA, TAMANO_CASILLA));
                 // Establecer el color de fondo de la casilla
@@ -94,13 +127,27 @@ public class AjedrezGUI extends JFrame {
                     throw new MovimientoInvalidoException("Las filas y columnas deben estar entre 0 y 7.");
                 }
 
-                // Mover la pieza y verificar el estado del rey
-                if (tablero.moverPieza(piezaSeleccionada, destino)) {
-                    // Movimiento exitoso, actualizar el tablero
+                // Verificar si hay una pieza en la posición de destino
+                Pieza piezaDestino = tablero.getTablero()[destino.getFila()][destino.getColumna()];
+                boolean movimientoExitoso = tablero.moverPieza(piezaSeleccionada, destino);
+                if (movimientoExitoso) {
+                    // Si se movió exitosamente, verificar si se comió una pieza
+                    if (piezaDestino != null) {
+                        // Si se comió una pieza, agregarla al panel correspondiente
+                        if (piezaDestino.getColor() == ColorPieza.BLANCO) {
+                            piezasComidasNegras.add(piezaDestino);
+                            actualizarPanelPiezasComidas(panelPiezasComidasNegras, piezaDestino);
+                        } else {
+                            piezasComidasBlancas.add(piezaDestino);
+                            actualizarPanelPiezasComidas(panelPiezasComidasBlancas, piezaDestino);
+                        }
+                    }
                     actualizarTablero();
                     // Cambiar el turno
                     turnoBlancas = !turnoBlancas; // Alternar el turno
                     actualizarTurnoLabel(); // Actualizar el JLabel
+                } else {
+                    mostrarError("Movimiento no válido."); // Manejar el caso de movimiento no válido
                 }
             } catch (MovimientoInvalidoException e) {
                 mostrarError(e.getMessage()); // Mostrar el mensaje de error
@@ -114,6 +161,23 @@ public class AjedrezGUI extends JFrame {
             piezaSeleccionada = null; // Reiniciar la selección
         }
     }
+
+    private void actualizarPanelPiezasComidas(JPanel panel, Pieza pieza) {
+        // Crear la ruta de la imagen de la pieza
+        String imagePath = "Images/" + (pieza.getColor() == ColorPieza.BLANCO ? "B-" : "N-") + pieza.getClass().getSimpleName().charAt(0) + ".gif";
+        ImageIcon icon = new ImageIcon(imagePath); // Cargar la imagen
+
+        // Crear un JLabel con la imagen
+        JLabel piezaLabel = new JLabel(icon);
+        piezaLabel.setHorizontalAlignment(SwingConstants.CENTER); // Centrar la imagen
+        piezaLabel.setVerticalAlignment(SwingConstants.CENTER); // Centrar la imagen verticalmente
+
+        // Añadir el JLabel al panel
+        panel.add(piezaLabel);
+        panel.revalidate(); // Actualiza el panel
+        panel.repaint(); // Redibuja el panel
+    }
+
     private void mostrarError(String mensaje) {
         JOptionPane.showMessageDialog(this, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
     }

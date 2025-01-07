@@ -3,7 +3,7 @@ package modelos;
 import Exceptions.MovimientoInvalidoException;
 import javax.swing.JOptionPane;
 
-public class Tablero {
+public class Tablero implements Juego{
     private Pieza[][] tablero;
 
     public Tablero() {
@@ -11,6 +11,7 @@ public class Tablero {
         inicializarTablero();
     }
 
+    //Upcasting Convertimos las diferentes subclases Piezas a Piezas(padre)
     private void inicializarTablero() {
         // Inicializar las piezas en sus posiciones iniciales
         for (int i = 0; i < 8; i++) {
@@ -37,6 +38,7 @@ public class Tablero {
         tablero[7][7] = new Torre(ColorPieza.NEGRO, new Posicion(7, 7));
     }
 
+    @Override
     public boolean moverPieza(Posicion origen, Posicion destino) throws MovimientoInvalidoException {
         // Verificar que las posiciones estén dentro de los límites
         if (origen.getFila() < 0 || origen.getFila() > 7 || origen.getColumna() < 0 || origen.getColumna() > 7 ||
@@ -81,6 +83,7 @@ public class Tablero {
         return true; // Movimiento exitoso
     }
 
+
     private void verificarEstadoRey() {
         Rey reyBlanco = obtenerRey(ColorPieza.BLANCO);
         Rey reyNegro = obtenerRey(ColorPieza.NEGRO);
@@ -99,7 +102,7 @@ public class Tablero {
             JOptionPane.showMessageDialog(null, "¡Jaque mate! El rey negro no tiene movimientos legales.");
         }
     }
-
+//downcasting Obtenemos una estancia Pieza y la convertimos en Rey
     private Rey obtenerRey(ColorPieza color) {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
@@ -111,6 +114,7 @@ public class Tablero {
         return null; // No se encontró el rey
     }
 
+    @Override
     public boolean isInCheck(Rey rey) {
         Posicion posRey = rey.getPosicion();
         for (int i = 0; i < 8; i++) {
@@ -125,6 +129,7 @@ public class Tablero {
     }
 
 
+    @Override
     public boolean isCheckmate(Rey rey) {
         if (!isInCheck(rey)) {
             return false;
@@ -171,6 +176,7 @@ public class Tablero {
 
 
 
+    @Override
     public Pieza[][] getTablero() {
         return tablero; // Método para obtener el estado del tablero
     }

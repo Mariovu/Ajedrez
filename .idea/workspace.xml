@@ -5,39 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbed7afd-11c9-4742-a2c9-227f2677de5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ajedrez.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/B-A.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/B-C.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/B-P.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/B-Q.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/B-R.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/B-T.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/N-A.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/N-C.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/N-P.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/N-Q.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/N-R.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/N-T.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exceptions/MovimientoInvalidoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Vistas/AjedrezGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelos/Alfil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelos/Caballo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelos/ColorPieza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelos/Peon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelos/Pieza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelos/Posicion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelos/Queen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelos/Rey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelos/Tablero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelos/Torre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelos/Juego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vistas/AjedrezGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vistas/AjedrezGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modelos/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelos/Tablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +20,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -66,7 +38,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "E:/Program Files/Seguro/JavaProyectos/Ajedrez/Images"
+    "last_opened_file_path": "E:/Program Files/Seguro/JavaProyectos/Ajedrez"
   }
 }]]></component>
   <component name="RecentsManager">
